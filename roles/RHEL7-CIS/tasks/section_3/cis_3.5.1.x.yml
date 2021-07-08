@@ -54,11 +54,11 @@
 
 - name: "SCORED | 3.5.1.5 | PATCH | Ensure default zone is set"
   block: 
-  ignore_errors: true
   - name: "SCORED | 3.5.1.5 | AUDIT | Ensure default zone is set"
     command: firewall-cmd --get-default-zone
     changed_when: no
     register: current_default_zone
+    ignore_errors: true
 
   - name: "SCORED | 3.5.1.5 | PATCH | Ensure default zone is set"
     command: firewall-cmd --set-default-zone="{{ rhel7cis_default_zone }}"
