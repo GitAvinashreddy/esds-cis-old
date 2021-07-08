@@ -1,0 +1,54 @@
+---
+- hosts: all
+  become: true
+  vars:
+      is_container: false
+  tasks:
+  - name: Fetching OS name and version details
+    shell: cat /etc/os-release
+    register: release
+  - debug:
+      msg: "{{ item }}"
+    with_items: "{{ release.stdout_lines }}"
+    when: "item.split('=')[0] == 'NAME'"
+  - name: Registering OS name
+    set_fact:
+      OS_name: "{{ item.split('=')[1] }}"
+    with_items: "{{ release.stdout_lines }}"
+    when: "item.split('=')[0] == 'NAME'"
+  - name: Resgistering OS version
+    set_fact:
+      OS_version: "{{ item.split('=')[1] }}"
+    with_items: "{{ release.stdout_lines }}"
+    when: "item.split('=')[0] == 'VERSION'"
+  - name: If RHEL 8 server
+    debug: 
+      msg: "RHEL 8 server"
+    when:
+    - "'Red Hat' in OS_name"
+    - "'8' in OS_version.split('.')[0]"
+  - name: If RHEL 7 server
+    debug:
+      msg: "RHEL 7 Server"
+    when:
+    - "'Red Hat' in OS_name"
+    - "'7' in OS_version.split('.')[0]"
+  - include_role:
+      name: RHEL8-CIS
+    vars:  
+      rhel8cis_system_is_container: "{{ is_container | default(false) }}"
+      rhel8cis_skip_for_travis: false
+    when:
+    - "'Red Hat' in OS_name"
+    - "'8' in OS_version.split('.')[0]"
+  - include_role:
+      name: RHEL7-CIS
+    when:
+    - "'Amazon Linux' in OS_name"
+    - "'2' in OS_version.split('.')[0]"
+
+
+
+
+
+
