@@ -44,6 +44,7 @@
     name: firewalld
     state: started
     enabled: true
+  ignore_errors: true
   when:
   - rhel7cis_rule_3_5_1_4
   tags:
