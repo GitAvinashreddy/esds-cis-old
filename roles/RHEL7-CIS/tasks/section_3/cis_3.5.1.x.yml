@@ -53,7 +53,8 @@
   - rule_3.5.1.4
 
 - name: "SCORED | 3.5.1.5 | PATCH | Ensure default zone is set"
-  block:
+  block: 
+  ignore_errors: true
   - name: "SCORED | 3.5.1.5 | AUDIT | Ensure default zone is set"
     command: firewall-cmd --get-default-zone
     changed_when: no
