@@ -64,6 +64,7 @@
     command: firewall-cmd --set-default-zone="{{ rhel7cis_default_zone }}"
     when:
     - current_default_zone.stdout != rhel7cis_default_zone
+    ignore_errors: true
   when:
   - rhel7cis_rule_3_5_1_5
   tags:
