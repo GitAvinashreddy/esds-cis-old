@@ -44,8 +44,8 @@
   - include_role:
       name: RHEL7-CIS
     when:
-    - "'Amazon Linux' in OS_name"
-    - "'2' in OS_version.split('.')[0]"
+    - "'Red Hat' in OS_name"
+    - "'7' in OS_version.split('.')[0]"
 
 
 
