@@ -85,6 +85,7 @@
       msg:
       - "The items below are the policies tied to the interfaces, please correct as needed"
       - "{{ rhel7cis_3_5_1_6_interfacepolicy.stdout_lines }}"
+  ignore_errors: true
   when:
   - rhel7cis_rule_3_5_1_6
   tags:
@@ -105,6 +106,7 @@
       msg:
       - "The items below are the services and ports that are accepted, please correct as needed"
       - "{{ rhel7cis_3_5_1_7_servicesport.stdout_lines }}"
+  ignore_errors: true
   when:
   - rhel7cis_rule_3_5_1_7
   tags:
