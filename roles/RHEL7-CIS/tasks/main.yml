@@ -124,3 +124,4 @@
     msg: "{{ audit_results.split('\n') }}"
   when:
   - rhel7cis_run_audit
+

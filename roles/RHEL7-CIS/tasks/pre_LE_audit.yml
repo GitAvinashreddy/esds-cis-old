@@ -1,5 +1,4 @@
 ---
-
 - name: Setup the LE audit
   include_tasks: LE_audit_setup.yml
   when:
@@ -35,7 +34,7 @@
     src: "{{ rhel7cis_audit_local_copy }}"
     dest: "{{ goss_audit_dir  }}"
     owner: root
-    group: root
+     group: root
     mode: 0640
   when:
   - rhel7cis_audit_content == 'copy'
@@ -53,12 +52,17 @@
     stat:
       path: "{{ goss_bin }}"
     register: goss_available
+  - debug: var=goss_available
+  - debug: var=goss_audit_dir
+  - debug: var=goss_file
+  - debug: var=goss_available.stat.exists
 
   - name: Assert that goss is available
     assert:
       msg: "Audit has been selected: unable to find goss binary at {{ goss_bin }}"
     when:
-    - not goss_available.stat.exists
+#    - not goss_available.stat.exists
+    - "goss_available.stat.exists == 'false'"
   when:
   - rhel7cis_run_audit
 
@@ -89,6 +93,7 @@
     command: "cat {{ pre_audit_outfile }}"
     register: pre_audit
     changed_when: false
+  - debug: var=pre_audit
 
   - name: Capture pre-audit result
     set_fact:
