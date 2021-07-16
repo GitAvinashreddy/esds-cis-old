@@ -564,7 +564,7 @@ rhel7cis_audit_file_git: "https://github.com/ansible-lockdown/{{ benchmark }}-Au
 rhel7cis_audit_git_version: main
 
 # copy:
-rhel7cis_audit_local_copy: "/home/govadmin/patch-automation/esds-cis/RHEL7-CIS-Audit"
+rhel7cis_audit_local_copy: "/home/govadmin/patch-automation/esds-cis/RHEL7-CIS-Audit/"
 
 # get_url:
 rhel7cis_audit_files_url: "some url maybe s3?"
@@ -581,7 +581,7 @@ post_audit_outfile: "{{ goss_out_dir }}/{{ ansible_hostname }}_post_scan_{{ ansi
 
 ## The following should not need changing
 goss_file: "{{ goss_audit_dir }}goss.yml"
-goss_vars_path: "{{ goss_audit_dir }}/vars/{{ ansible_hostname }}.yml"
+goss_vars_path: "{{ goss_audit_dir }}vars/{{ ansible_hostname }}.yml"
 audit_results: |
       The pre remediation results are: {{ pre_audit_summary }}.
       The post remediation results are: {{ post_audit_summary }}.
