@@ -1,0 +1,36 @@
+10.10.211.2   ansible_user=govadmin
+10.10.211.3   ansible_user=govadmin
+10.10.211.4   ansible_user=govadmin
+10.10.211.5   ansible_user=govadmin
+10.10.211.11  ansible_user=govadmin
+10.10.211.12  ansible_user=govadmin
+10.10.211.30  ansible_user=govadmin
+10.10.211.37  ansible_user=govadmin
+10.10.212.6   ansible_user=govadmin
+10.10.212.7   ansible_user=govadmin
+10.10.212.9   ansible_user=govadmin
+10.10.212.10  ansible_user=govadmin
+10.10.212.14  ansible_user=govadmin
+10.10.212.16  ansible_user=govadmin
+10.10.212.28  ansible_user=govadmin
+10.10.213.2   ansible_user=govadmin
+10.10.213.3   ansible_user=govadmin
+10.10.213.6   ansible_user=govadmin
+10.10.213.7   ansible_user=govadmin
+10.10.213.12  ansible_user=govadmin
+10.10.213.18  ansible_user=govadmin
+10.10.213.19  ansible_user=govadmin
+10.10.213.26  ansible_user=govadmin
+10.10.213.27  ansible_user=govadmin
+10.10.213.38  ansible_user=govadmin
+10.10.213.54  ansible_user=govadmin
+10.10.213.56  ansible_user=govadmin
+10.10.213.66  ansible_user=govadmin
+10.10.213.75  ansible_user=govadmin
+10.10.213.115 ansible_user=govadmin
+10.10.213.40 ansible_user=govadmin ansible_port=5522
+10.10.213.41 ansible_user=govadmin ansible_port=5522
+10.10.212.21 ansible_user=govadmin ansible_port=5522
+10.10.243.21 ansible_user=govadmin ansible_port=5522
+10.10.211.39 ansible_user=govadmin ansible_port=5522
+10.10.212.21 ansible_user=govadmin ansible_port=5522
