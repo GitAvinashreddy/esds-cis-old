@@ -1,0 +1,5 @@
+---
+- hosts: suse
+  become: yes
+  roles:
+    - SLES12-CIS
